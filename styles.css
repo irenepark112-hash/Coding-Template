@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "B2Hana-Regular";
+    src:
+      url("https://cdn.jsdelivr.net/gh/max32002/max-hana@1.1/webfont/B2Hana-Regular.woff2") format("woff2"),
+      url("https://cdn.jsdelivr.net/gh/max32002/max-hana@1.1/webfont/B2Hana-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+*{
+    background-color: antiquewhite;
+    
+}
+
+.title{
+    margin-left: 8px;
+    margin-top: 10px;
+    display: flex;
+    font-family: B2Hana-Regular;
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+
+.boxes {
+    margin: 8px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+.boxes > div {
+    font-size: .75rem;
+    font-family: B2Hana-Regular;
+    min-height: 200px;
+    padding: 15px;
+    display: flex;
+    border: .75px solid black;
+
+}

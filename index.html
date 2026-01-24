@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" class="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternative internet archive
+    </title>
+    <link rel="stylesheet" href="./resources/index.css"> <!--this links your HTML file to your CSS style sheet in resources folder-->
+    <link rel="icon" type="image/x-icon" href="./resources/"> <!--In href="" after resources, type in your file name to link an image for your favicon-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+<header>
+
+  <div class="title">
+    alternative internet archive
+  </div>
+    <div class="header" id="navigation-menu">
+        <!-- <ul>
+          <a href="https://www.are.na/risd-ws-26-activating-networks-gathering-knowledge/coding-resources-hgqypzjp4vi">Arena</a>
+          <a href="https://docs.google.com/forms/d/1vvyHnhx4E6AUctK7RdZs8_VuKxBS_vWioCk72p2VIJ8/edit">Google Forms</a>
+          <a href="https://usemodify.com/fonts/young-serif/">Use Modify</a>
+        </ul> -->
+    </div>
+</header>
+<link rel="stylesheet" href="styles.css">
+<div class="boxes">
+  <div class="first-box">first</div>
+  <div class="second-box">second</div>
+  <div class="third-box">third</div>
+  <div class="third-box">frouth</div>
+  <div class="third-box">fifth</div>
+  <div class="third-box">third</div>
+</div>
+
+
+<!--Make sure you keep the class below titled grid and know that this is where your submissions will load-->
+    <div class="grid"> 
+
+    </div>
+
+
+
+<!-- ****************************************************************************
+Below is javascript for connecting your google sheet to autopopulate the HTML-->
+
+<script>
+    var SPREADSHEET_ID = ""; //<-- put spreadsheet ID from URL here
+    var TAB_NAME = "Sheet1"; // Make sure it has the correct sheet name from bottom of webpage
+
+
+$(document).ready(function () {
+  $.getJSON("https://opensheet.elk.sh/" + SPREADSHEET_ID + "/" + TAB_NAME, function (data) {
+    
+    console.log(data); 
+    
+  
+    data.forEach(function (entry, index) {
+      
+      console.log(entry);
+      //replace header1, header2, etc. with the column names from your google sheet
+      $(`<section> 
+            <p>` + entry.header1 + `</p>
+            <p>` + entry.header2 + `</p>
+            <p>` + entry.header3 + `</p>
+            <p>` + entry.header4 + `</p>
+            <p>` + entry.header5 + `</p>
+            <p>` + entry.header6 + `</p>
+         </section>`)
+        .appendTo(".grid");
+    });
+  });  
+});
+</script>
+
+<!--This code was provided in Avrie Allen's Wintersession course at RISD, Activating Networks, Gathering Knowledge and was initially inspired by Chia Amisola's sheet sites tutorial with Developh-->
+</body>
+</html>
