@@ -15,7 +15,7 @@
 <header>
 
   <div class="title">
-    alternative internet archive
+    alternate internet archive
   </div>
     <div class="header" id="navigation-menu">
         <!-- <ul>
@@ -26,20 +26,24 @@
     </div>
 </header>
 <link rel="stylesheet" href="styles.css">
-<div class="boxes">
-  <div class="first-box">first</div>
-  <div class="second-box">second</div>
-  <div class="third-box">third</div>
-  <div class="third-box">frouth</div>
-  <div class="third-box">fifth</div>
-  <div class="third-box">third</div>
+
+<a href="about.html">
+<div class="about">
+  about
 </div>
+</a>
+<!-- <div class="boxes">
+  <div class="first-box">Aenean tincidunt felis in odio varius, in malesuada est auctor. Maecenas imperdiet sapien ut lectus malesuada maximus. Mauris eu dignissim diam. Proin magna arcu, feugiat vel lorem a, pretium rhoncus ante. Vivamus vitae arcu scelerisque, accumsan ante ac, dapibus lacus. Sed arcu nisi, faucibus pellentesque risus non, pha</div>
+  <div class="second-box">Aenean tincidunt felis in odio varius, in malesuada est </div>
+  <div class="third-box">Aenean tincidunt felis in odio varius, in malesuada est auctor. Maecenas imperdiet sapien ut lectus malesuada maximus. Mauris eu dignissim diam. Proin magna arcu, feugiat vel lorem a, pretium </div>
+  <div class="third-box"> vitae arcu scelerisque, accumsan ante ac, dapibus lacus. Sed arcu nisi, faucibus pellentesque risus non, pha</div>
+  <div class="third-box">Aenean tincidunt felis in odio varius, in malesuada est </div>
+  <div class="third-box">third</div>
+</div> -->
 
 
 <!--Make sure you keep the class below titled grid and know that this is where your submissions will load-->
-    <div class="grid"> 
-
-    </div>
+    <div class="grid"> </div>
 
 
 
@@ -47,7 +51,7 @@
 Below is javascript for connecting your google sheet to autopopulate the HTML-->
 
 <script>
-    var SPREADSHEET_ID = ""; //<-- put spreadsheet ID from URL here
+    var SPREADSHEET_ID = "1WWm_APwkXTOvn2kl-320Pg2FLTtJApfCQ7TzHb22rn4"; //<-- put spreadsheet ID from URL here
     var TAB_NAME = "Sheet1"; // Make sure it has the correct sheet name from bottom of webpage
 
 
@@ -62,12 +66,7 @@ $(document).ready(function () {
       console.log(entry);
       //replace header1, header2, etc. with the column names from your google sheet
       $(`<section> 
-            <p>` + entry.header1 + `</p>
-            <p>` + entry.header2 + `</p>
-            <p>` + entry.header3 + `</p>
-            <p>` + entry.header4 + `</p>
-            <p>` + entry.header5 + `</p>
-            <p>` + entry.header6 + `</p>
+            <p>` + entry.Response + `</p>
          </section>`)
         .appendTo(".grid");
     });
