@@ -1,0 +1,19 @@
+*{
+    background-color: rgb(255, 255, 255);
+    font-family: B2Hana-Regular, sans-serif;
+    cursor: pointer;
+}
+
+.about-text{
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4rem;
+    padding: 1rem;
+    padding-top: 7rem;
+    min-height: 200px;
+
+    transform: scaleY(1.5);
+    transform-origin: center;
+
+    line-height: 1;
+}
