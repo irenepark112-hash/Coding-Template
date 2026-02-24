@@ -59,7 +59,12 @@ $(document).ready(function () {
     
     console.log(data); 
     
-  
+    // Shuffle the data so answers appear in a random order
+    for (let i = data.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [data[i], data[j]] = [data[j], data[i]];
+    }
+
     data.forEach(function (entry, index) {
       
       console.log(entry);
