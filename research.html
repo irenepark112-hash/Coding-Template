@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" class="">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Repository</title>
+   <link rel="stylesheet" href="./styles.css">
+   <link rel="stylesheet" href="./research.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+   <div class="header">
+      <h1>Alternate Internet Archive Research Repository</h1>
+      <br>
+      <h1>altinter.net for more information -> wintersession 26 @ rhode island school of design -> activating networks, gathering knowledge</h1>
+      <br>
+      <div class="line"></div>
+   </div>
+   <div class="links">
+   </div>
+
+
+   <script>
+      var SPREADSHEET_ID = "1n5PbokNPI5bhdSI-QaX89o5U8ILy5_2fRUa2TWYOcaU"; 
+      var TAB_NAME = "Sheet1";
+      
+      
+      $(document).ready(function () {
+       $.getJSON("https://opensheet.elk.sh/" + SPREADSHEET_ID + "/" + TAB_NAME, function (data) {
+        
+         console.log(data);
+        
+          data.forEach(function (entry, index) {
+          
+           console.log(entry);
+          
+                  $(`<section>
+                      <span class="date-text">` + (entry.Date || "") + `</span>
+                      <a href="` + entry.Link + `" target="_blank" class="title-link">
+                      <h3 class="title-text">` + entry.Title + `</h3>
+                      </a>
+                      <p class="hover-text">` + entry.Hover + `</p>
+                  </section>`)
+                  .appendTo(".links");
+         });
+       }); 
+      });
+      </script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
